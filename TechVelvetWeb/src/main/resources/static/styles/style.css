@@ -17,13 +17,22 @@ a {
 
 /* -------------------------------------------------------------------------- */
 
-/* #a31153 #a311533f #72143e #262626 #201E1E #161616 #F1F1F1 */
+/* Palette */
+
+/* https://colorhunt.co/palette/6f4a8e221f3b050505ebebeb */
+
+/* #6F4A8E #6f4a8e4d #221F3B #050505 #EBEBEB */
+
+/* Support */
+
+/*  #262626 #201E1E #161616 */
 
 :root {
-    --main: #b92769;
-    --mainTransl: #a311533f;
-    --mainDarker: #72143e;
-    --white: #F1F1F1;
+    --main: #6F4A8E;
+    --mainTransl: #6f4a8e4d;
+    --mainDarker: #221F3B;
+    --white: #EBEBEB;
+    --black: #050505;
     --gray1: #262626;
     --gray2: #201E1E;
     --gray3: #161616;
@@ -78,7 +87,6 @@ header .container {
     justify-content: space-between;
     width: 95%;
     padding: 1.6rem 1rem;
-    color: var(--main);
 }
 
 /* --------------------------------------*/
@@ -87,8 +95,9 @@ header .container {
 header .container .logo {
     display: flex;
     align-items: center;
-    font-weight: bolder;
+    font-weight: 900;
     font-size: 2.2rem;
+    color: var(--gray4);
 }
 
 /* --------------------------------------*/
@@ -120,8 +129,7 @@ header .container nav a:hover {
 header .container #btnMobile {
     display: none;
     font-size: 4rem;
-    align-self: flex-end;
-    color: var(--main);
+    color: var(--gray4);
     z-index: 4000;
 }
 
@@ -188,6 +196,7 @@ footer .container {
     font-family: monospace;
     letter-spacing: 2px;
     color: var(--white);
+    text-shadow: 2px 2px var(--main);
     font-size: 1.6rem;
     padding-top: 28px;
     padding-bottom: 12px;
