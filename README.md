@@ -4,6 +4,8 @@ Projeto desenvolvido na disciplina de Gestão do Ciclo de Vida da Aplicação.
 
 Universidade Federal de Alfenas - UNIFAL
 
+Esse projeto usa uma empresa fictícia brasileira a ser inaugurada, chamada TechVelvet, que comercializa periféricos focados principalmente no público gamer.
+
 
 ## Componentes
 
