@@ -31,8 +31,11 @@ Esse projeto usa uma empresa fictícia brasileira a ser inaugurada, chamada Tech
 | Branco            | ![#EBEBEB](https://via.placeholder.com/10/EBEBEB?text=+) #EBEBEB |
 
 
+## Links
+
+- Biblioteca de ícones: [Boxicons](https://boxicons.com/)
+- Fonte: [Valorant](https://www.cdnfonts.com/valorant.font)
+
 ## Funcionalidades
 
 - Barra de navegação responsiva para a página do Painel de Controle do Administrador
-
-
