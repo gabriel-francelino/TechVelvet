@@ -8,9 +8,9 @@ Universidade Federal de Alfenas - UNIFAL
 ## Componentes
 
 - [Daniel da Costa](https://www.github.com/DanClima)
-- [Gabriel Piva](https://www.github.com/)
 - [Gabriel Francelino](https://www.github.com/)
 - [Gabriel Nadalin](https://www.github.com/)
+- [Gabriel Piva](https://www.github.com/)
 - [Leonardo Reis](https://www.github.com/)
 - [Lucas](https://www.github.com/)
 - [Renan Magalhães](https://www.github.com/RenannLage)
