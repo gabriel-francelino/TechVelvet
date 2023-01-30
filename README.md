@@ -10,7 +10,7 @@ Universidade Federal de Alfenas - UNIFAL
 - [Daniel da Costa](https://www.github.com/DanClima)
 - [Gabriel Francelino](https://www.github.com/)
 - [Gabriel Nadalin](https://www.github.com/)
-- [Gabriel Piva](https://www.github.com/)
+- [Gabriel Piva](https://www.github.com/gpiiva)
 - [Leonardo Reis](https://www.github.com/)
 - [Lucas](https://www.github.com/)
 - [Renan Magalhães](https://www.github.com/RenannLage)
