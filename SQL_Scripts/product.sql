@@ -7,11 +7,11 @@ CREATE TABLE PRODUCT (
     PRODUCT_NAME VARCHAR(255),
     PRODUCT_PRICE FLOAT,
     PRODUCT_DESCRIPTION VARCHAR(300),
-    PRODCUT_BRAND VARCHAR(255),
+    PRODUCT_BRAND VARCHAR(255),
     PRIMARY KEY (PRODUCT_ID)
 );
 
-INSERT INTO PRODUCT (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODCUT_BRAND) VALUES
+INSERT INTO PRODUCT (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_BRAND) VALUES
     ('Teclado Mecânico Redragon', 329.99, 'Teclado Mecânico com fio preto', 'Redragon'),
     ('Teclado Mecânico HyperX', 319.99, 'Teclado Mecânico sem fio cinza', 'HyperX'),
     ('Teclado Mecânico Motospeed', 199.99, 'Teclado Mecânico com fio branco', 'Motospeed'),
