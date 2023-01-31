@@ -39,3 +39,4 @@ Esse projeto usa uma empresa fictícia brasileira a ser inaugurada, chamada Tech
 ## Funcionalidades
 
 - Barra de navegação responsiva para a página do Painel de Controle do Administrador
+- Conexão com o banco de dados MySQL na tabela de produtos, com leitura e inserção
