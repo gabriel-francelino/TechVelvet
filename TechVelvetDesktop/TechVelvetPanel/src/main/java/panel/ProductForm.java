@@ -1,5 +1,8 @@
 package panel;
 
+import desktop.entity.Product;
+import request.ProductRequest;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -72,10 +75,12 @@ public class ProductForm extends JFrame {
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String name = nameInput.getText();
-                String price = priceInput.getText();
+                float price = Float.parseFloat(priceInput.getText());
                 String description = descriptionInput.getText();
                 String brand = brandInput.getText();
-                System.out.println("Name: " + name + "\nPrice: " + price + "\nDescription: " + description + "\nBrand: " + brand);
+                Product p = new Product(name, price, description, brand);
+                System.out.println(p);
+                ProductRequest.postProduct(p);
             }
         });
 
