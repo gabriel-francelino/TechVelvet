@@ -22,3 +22,37 @@ INSERT INTO PRODUCT (PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_B
     ('Placa de Vídeo RTX 3060 NVIDEA', 2399.99, 'Placa de vídeo cinza', 'NVIDEA'),
     ('Placa de Vídeo Radeon RX6700 AMD', 2599.99, 'Placa de vídeo cinza', 'AMD'),
     ('Placa de Vídeo RX580 Redragon', 1399.99, 'Placa de vídeo preta', 'Redragon');
+
+/*
+    POST examples to test
+    {
+        "name": "Monitor AOC 22B1H",
+        "price": 399.99,
+        "description": "Monitor preto HDMI",
+        "brand": "AOC"
+    },
+    {
+        "name": "Monitor LG Ultrawide",
+        "price": 1299.99,
+        "description": "Monitor preto 29'",
+        "brand": "LG"
+    },
+    {
+        "name": "Monitor Dell Alienware",
+        "price": 10296.0,
+        "description": "Monitor curvo preto 34'",
+        "brand": "Dell"
+    },
+    {
+        "name": "Monitor IPS Sansung",
+        "price": 903.99,
+        "description": "Monitor preto Sansung 24'",
+        "brand": "Sansung"
+    },
+    {
+        "name": "Mouse Logitech G703",
+        "price": 569.99,
+        "description": "Mouse Logitech preto sem fio",
+        "brand": "Logitech"
+    }
+*/

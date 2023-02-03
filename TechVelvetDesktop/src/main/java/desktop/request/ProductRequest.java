@@ -1,9 +1,9 @@
-package request;
+package desktop.request;
 
 import java.io.DataOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 import desktop.entity.Product;
 
@@ -17,10 +17,9 @@ public class ProductRequest {
             con.setRequestProperty("Accept", "application/json");
             con.setDoOutput(true);
 
-            ObjectMapper objectMapper = new ObjectMapper();
-
+            Gson gson = new Gson();
             try (DataOutputStream wr = new DataOutputStream(con.getOutputStream())) {
-                String json = objectMapper.writeValueAsString(product);
+                String json = gson.toJson(product);
                 wr.write(json.getBytes());
             }
 

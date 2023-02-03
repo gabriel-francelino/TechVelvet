@@ -1,7 +1,7 @@
-package desktop.repository;
+package web.api.repository;
 
 import java.util.List;
-import desktop.entity.Product;
+import web.api.entity.Product;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {

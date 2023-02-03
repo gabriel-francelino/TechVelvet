@@ -1,8 +1,7 @@
-package desktop.controller;
+package web.api.controller;
 
-import desktop.repository.*;
-import desktop.entity.*;
-
+import web.api.entity.Product;
+import web.api.repository.ProductRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;

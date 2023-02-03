@@ -1,12 +1,9 @@
-package panel;
+package desktop.panel;
 
 import desktop.entity.Product;
-import request.ProductRequest;
+import desktop.request.ProductRequest;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.Serial;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,8 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class ProductForm extends JFrame {
-    @Serial
-    private static final long serialVersionUID = 1L;
 
     public ProductForm() {
         setSize(500, 210);
@@ -72,15 +67,18 @@ public class ProductForm extends JFrame {
         JButton submitButton = new JButton("Submit");
         submitButton.setBackground(Color.decode("#6F4A8E"));
         submitButton.setForeground(Color.WHITE);
-        submitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String name = nameInput.getText();
-                float price = Float.parseFloat(priceInput.getText());
-                String description = descriptionInput.getText();
-                String brand = brandInput.getText();
-                Product p = new Product(name, price, description, brand);
-                System.out.println(p);
+        submitButton.addActionListener(e -> {
+            String name = nameInput.getText();
+            float price = Float.parseFloat(priceInput.getText());
+            String description = descriptionInput.getText();
+            String brand = brandInput.getText();
+            Product p = new Product(name, price, description, brand);
+
+            if (p.validateProduct()) {
+                System.out.println(p.toString());
                 ProductRequest.postProduct(p);
+            } else {
+                System.out.println("Error in product information added");
             }
         });
 
