@@ -56,4 +56,13 @@ public class UserController {
         userService.delete(userDeleted);
         return ResponseEntity.noContent().build();
     }
+
+//    @PutMapping("/{id}/roles")
+//    public User addRoles(@PathVariable(value = "id") int userId, @RequestBody List<Integer> roleIds) {
+//        User user = userService.findById(userId);
+//        if(user == null) return null;
+//        List<Role> roles = roleService.findAllById(roleIds);
+//        user.getRoles().addAll(roles);
+//        return userService.save(user);
+//    }
 }

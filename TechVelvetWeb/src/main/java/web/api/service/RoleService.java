@@ -22,4 +22,6 @@ public class RoleService {
     public Role save(Role role) {
         return roleRepository.save(role);
     }
+
+//    public List<Role> findAllById(List<Integer> rolesId) { return (List<Role>)roleRepository.findAllById(rolesId); }
 }

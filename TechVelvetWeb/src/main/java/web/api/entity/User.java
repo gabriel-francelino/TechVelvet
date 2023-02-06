@@ -3,7 +3,8 @@ package web.api.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-// import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 @Getter @Setter @NoArgsConstructor @ToString
 @Entity @Table(name = "users")
@@ -25,13 +26,11 @@ public class User {
     @Column(name = "PASSWORD")
     String password;
 
-    /*
     @ManyToMany
     @JoinTable(
             name = "USER_ROLE",
             joinColumns = {@JoinColumn(name = "USER_ID")},
             inverseJoinColumns = {@JoinColumn(name = "ROLE_ID")}
     )
-    HashSet<Role> roles = new HashSet<>();
-    */
+    List<Role> roles = new ArrayList<>();
 }
