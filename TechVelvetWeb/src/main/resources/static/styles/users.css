@@ -1,0 +1,49 @@
+/* -------------------------------------------------------------------------- */
+
+/* TechVelvet Store - Users Page CSS */
+
+/* -------------------------------------------------------------------------- */
+
+/* MAIN */
+
+/* Users */
+main .container .users {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 270px;
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: var(--gray2);
+    box-shadow: 4px 4px 8px var(--gray3);
+    margin-top: 35px;
+}
+
+/* Users Header */
+main .container .users .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+main .container .users .header .title {
+    color: var(--main);
+    font-size: 2rem;
+}
+main .container .users .header button {
+    width: 8%;
+    min-width: 55px;
+    padding: .2rem;
+    border: 2px solid var(--main);
+    border-radius: 5px;
+}
+main .container .users .header button:hover {
+    background-color: var(--mainTransl);
+}
+main .container .users .header button i {
+    color: var(--main);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+/* -------------------------------------------------------------------------- */
