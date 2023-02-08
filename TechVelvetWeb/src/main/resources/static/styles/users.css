@@ -11,11 +11,12 @@ main .container .users {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 768px;
     min-width: 270px;
     border-radius: 5px;
     padding: 2rem;
     background-color: var(--gray2);
-    box-shadow: 4px 4px 8px var(--gray3);
+    box-shadow: 4px 4px 8px var(--black);
     margin-top: 35px;
 }
 
@@ -27,6 +28,7 @@ main .container .users .header {
     width: 100%;
 }
 main .container .users .header .title {
+    text-shadow: 2px 2px var(--gray3);
     color: var(--main);
     font-size: 2rem;
 }
@@ -46,4 +48,37 @@ main .container .users .header button i {
     font-size: 2rem;
 }
 
+/* Users List */
+main .container .users .list {
+    display: flex;
+    flex-direction: column;
+    color: var(--gray4);
+}
+main .container .users .list .user {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    background-color: var(--mainDarker);
+    box-shadow: 2px 2px 3px var(--gray3);
+    border-radius: 5px;
+    padding: 1rem;
+}
+main .container .users .list .user .display {
+    display: flex;
+    align-items: center;
+}
+main .container .users .list .user .display span {
+    font-size: 1.8rem;
+}
+main .container .users .list .user .buttons {
+    display: flex;
+    gap: 8px;
+}
+main .container .users .list .user .buttons button {
+    color: var(--gray4);
+    font-size: 1.5rem;
+    padding: .6rem 1rem;
+    border: 2px solid var(--gray4);
+    border-radius: 5px;
+}
 /* -------------------------------------------------------------------------- */

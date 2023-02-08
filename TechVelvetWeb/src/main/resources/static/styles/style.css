@@ -167,7 +167,7 @@ main {
 }
 main .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     width: 90%;
     max-width: 1024px;
@@ -209,7 +209,7 @@ footer .container {
 }
 @media (max-width: 425px) {
     html {
-        font-size: 50%;
+        font-size: 47%;
     }
 }
 @media (max-height: 485px) {
