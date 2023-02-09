@@ -31,10 +31,34 @@ const createUser = async (user) => {
     }
     return await response.json();
 }
+const updateUser = async (id, user) => {
+    const response = await fetch(`/api/users/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(user)
+    });
+    if (response.ok) {
+        console.log("User updated successfully");
+    } else {
+        console.error("Failed to update user");
+    }
+    return await response.json();
+}
+const deleteUser = async (id) => {
+    const response = await fetch(`/api/users/${id}`, {
+        method: "DELETE"
+    });
+    if (response.ok) {
+        console.log("User deleted successfully");
+    } else {
+        console.error("Failed to delete user");
+    }
+    return await response.json();
+}
 
 // -------------------------------------------------------------------------- 
 
-// Add New User
+// CRUD User
 
 const addNewUser = async () => {
     const firstName = document.getElementById("firstName").value;
@@ -44,6 +68,18 @@ const addNewUser = async () => {
     const user = { firstName, lastName, email, password };
 
     console.log(await createUser(user));
+    await loadUsers(ini, max)
+    closeModal();
+}
+const editUser = async (id) => {
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const user = { firstName, lastName, email, password };
+
+    console.log(await updateUser(id, user));
+    await loadUsers(ini, max);
     closeModal();
 }
 
@@ -55,13 +91,14 @@ const loadUsers = async (ini, max) => {
     userList.innerHTML = "";
     const users = await getUsers();
     for(let i = ini; i < max; i++) {
+        if(!users[i]) return null;
         userList.innerHTML += `
         <div class="user">
             <div class="display">
                 <span>${users[i].firstName} ${users[i].lastName}</span>
             </div>
             <div class="buttons">
-                <button><i class='bx bxs-pencil'></i></button>
+                <button><i class='bx bxs-pencil' onclick="modalEditUser(${i})"></i></button>
                 <button><i class='bx bxs-trash'></i></button>
             </div>
         </div>
@@ -125,8 +162,38 @@ const modalNewUser = () => {
             </div>
         </form>
     `;
+    btnConfirmModal.removeEventListener('click', confirmModal);
+    btnConfirmModal.removeAttribute("onclick");
     confirmModal = addNewUser;
     btnConfirmModal.addEventListener('click', confirmModal);
+}
+const modalEditUser = async (index) => {
+    const users = await getUsers();
+    const user = users[index];
+    openModal();
+    modalContent.innerHTML = `
+        <form>
+            <div class="inputField">
+                <input type="text" id="firstName" placeholder="First Name" autocomplete="off" value="${user.firstName}">
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="inputField">
+                <input type="text" id="lastName" placeholder="Last Name" autocomplete="off" value="${user.lastName}">
+                <label for="lastName">Last Name</label>
+            </div>
+            <div class="inputField">
+                <input type="email" id="email" placeholder="Email" autocomplete="off" value="${user.email}">
+            <label for="email">Email</label>
+            </div>
+            <div class="inputField">
+                <input type="text" id="password" placeholder="Password" autocomplete="off" value="${user.password}">
+                <label for="password">Password</label>
+            </div>
+        </form>
+    `;
+    btnConfirmModal.removeEventListener('click', confirmModal);
+    btnConfirmModal.removeAttribute("onclick");
+    btnConfirmModal.setAttribute("onclick", `editUser(${user.id})`);
 }
 
 // --------------------------------------------------------------------------
