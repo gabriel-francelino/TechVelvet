@@ -53,7 +53,6 @@ const deleteUser = async (id) => {
     } else {
         console.error("Failed to delete user");
     }
-    return await response.json();
 }
 
 // -------------------------------------------------------------------------- 
@@ -82,6 +81,13 @@ const editUser = async (id) => {
     await loadUsers(ini, max);
     closeModal();
 }
+const removeUser = async (id) => {
+    await deleteUser(id);
+    await loadUsers(0, 5);
+    ini = 0;
+    max = 5;
+    closeModal();
+}
 
 // -------------------------------------------------------------------------- 
 
@@ -98,8 +104,8 @@ const loadUsers = async (ini, max) => {
                 <span>${users[i].firstName} ${users[i].lastName}</span>
             </div>
             <div class="buttons">
-                <button><i class='bx bxs-pencil' onclick="modalEditUser(${i})"></i></button>
-                <button><i class='bx bxs-trash'></i></button>
+                <button onclick="modalEditUser(${i})"><i class='bx bxs-pencil'></i></button>
+                <button onclick="modalDeleteUser(${i})"><i class='bx bxs-trash'></i></button>
             </div>
         </div>
         `;
@@ -194,6 +200,17 @@ const modalEditUser = async (index) => {
     btnConfirmModal.removeEventListener('click', confirmModal);
     btnConfirmModal.removeAttribute("onclick");
     btnConfirmModal.setAttribute("onclick", `editUser(${user.id})`);
+}
+const modalDeleteUser = async (index) => {
+    const users = await getUsers();
+    const user = users[index];
+    openModal();
+    modalContent.innerHTML = `
+       <span>Do you really want to delete the user?</span>
+    `;
+    btnConfirmModal.removeEventListener('click', confirmModal);
+    btnConfirmModal.removeAttribute("onclick");
+    btnConfirmModal.setAttribute("onclick", `removeUser(${user.id})`);
 }
 
 // --------------------------------------------------------------------------

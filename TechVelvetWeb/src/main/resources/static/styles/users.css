@@ -148,8 +148,10 @@ main .container .users .pagination button i {
 /* Form */
 
 .modal .modalContainer .modalContent span {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 18px;
+    color: var(--main);
+    text-shadow: 2px 2px var(--gray3);
 }
 
 .modal .modalContainer .modalContent form {
