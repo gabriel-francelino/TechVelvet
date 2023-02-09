@@ -18,6 +18,38 @@ const getUsers = async () => {
     const users = await response.json();
     return users; 
 }
+const createUser = async (user) => {
+    const response = await fetch("/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(user)
+    });
+    if (response.ok) {
+        console.log("User created successfully");
+    } else {
+        console.error("Failed to create user");
+    }
+    return await response.json();
+}
+
+// -------------------------------------------------------------------------- 
+
+// Add New User
+
+const addNewUser = async () => {
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const user = { firstName, lastName, email, password };
+
+    console.log(await createUser(user));
+    closeModal();
+}
+
+// -------------------------------------------------------------------------- 
+
+// Load Users 
 
 const loadUsers = async (ini, max) => {
     userList.innerHTML = "";
@@ -66,8 +98,10 @@ const previousPage = () => {
 
 // Modals
 
+let confirmModal;
 const modalContent = document.querySelector('.modalContainer .modalContent');
 const btnCloseModal = document.querySelector("#btnCloseModal");
+const btnConfirmModal = document.querySelector("#btnConfirmModal");
 
 const modalNewUser = () => {
     openModal();
@@ -91,6 +125,8 @@ const modalNewUser = () => {
             </div>
         </form>
     `;
+    confirmModal = addNewUser;
+    btnConfirmModal.addEventListener('click', confirmModal);
 }
 
 // --------------------------------------------------------------------------
