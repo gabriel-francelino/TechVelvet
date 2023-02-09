@@ -20,6 +20,7 @@ const getUsers = async () => {
 }
 
 const loadUsers = async (ini, max) => {
+    userList.innerHTML = "";
     const users = await getUsers();
     for(let i = ini; i < max; i++) {
         userList.innerHTML += `
@@ -33,6 +34,31 @@ const loadUsers = async (ini, max) => {
             </div>
         </div>
         `;
+    }
+}
+
+// --------------------------------------------------------------------------
+
+// Pagination
+
+const btnPreviousPage = document.querySelector("#previousPage");
+const btnNextPage = document.querySelector("#nextPage");
+
+let ini = 0, max = 5;
+
+const nextPage = async () => {
+    const users = await getUsers();
+    if(ini+5 <= users.length-1) {
+        ini += 5;
+        max += 5;
+        loadUsers(ini, max);
+    }
+}
+const previousPage = () => {
+    if(ini-5 >= 0) {
+        ini -= 5;
+        max -= 5;
+        loadUsers(ini, max);
     }
 }
 
@@ -71,9 +97,12 @@ const modalNewUser = () => {
 
 // Events
 
+window.onload = () => loadUsers(ini, max);
+
 btnNewUser.addEventListener("click", modalNewUser);
 btnCloseModal.addEventListener("click", closeModal);
 
-loadUsers(0, 5);
+btnNextPage.addEventListener("click", nextPage);
+btnPreviousPage.addEventListener("click", previousPage);
 
 // --------------------------------------------------------------------------

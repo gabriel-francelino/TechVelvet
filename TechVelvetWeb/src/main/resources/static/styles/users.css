@@ -81,6 +81,26 @@ main .container .users .list .user .buttons button {
     border: 2px solid var(--gray4);
     border-radius: 5px;
 }
+
+/*-------------------------------------------------*/
+
+/* Users Pagination */
+
+main .container .users .pagination {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+main .container .users .pagination button {
+    border: 2px solid var(--main);
+    border-radius: 5px;
+    padding: .6rem;
+}
+main .container .users .pagination button i {
+    color: var(--main);
+    font-size: 2.4rem;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* Form Modal */
