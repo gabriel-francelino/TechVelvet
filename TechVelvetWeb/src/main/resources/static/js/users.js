@@ -7,6 +7,7 @@
 // HTML Elements
 
 const userList = document.querySelector(".users .list");
+const btnNewUser = document.querySelector("#btnModalNewUser");
 
 // -------------------------------------------------------------------------- 
 
@@ -37,7 +38,41 @@ const loadUsers = async (ini, max) => {
 
 // --------------------------------------------------------------------------
 
+// Modals
+
+const modalContent = document.querySelector('.modalContainer .modalContent');
+const btnCloseModal = document.querySelector("#btnCloseModal");
+
+const modalNewUser = () => {
+    openModal();
+    modalContent.innerHTML = `
+        <form>
+            <div class="inputField">
+                <input type="text" id="firstName" placeholder="First Name" autocomplete="off">
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="inputField">
+                <input type="text" id="lastName" placeholder="Last Name" autocomplete="off">
+                <label for="lastName">Last Name</label>
+            </div>
+            <div class="inputField">
+                <input type="email" id="email" placeholder="Email" autocomplete="off">
+            <label for="email">Email</label>
+            </div>
+            <div class="inputField">
+                <input type="text" id="password" placeholder="Password" autocomplete="off">
+                <label for="password">Password</label>
+            </div>
+        </form>
+    `;
+}
+
+// --------------------------------------------------------------------------
+
 // Events
+
+btnNewUser.addEventListener("click", modalNewUser);
+btnCloseModal.addEventListener("click", closeModal);
 
 loadUsers(0, 5);
 

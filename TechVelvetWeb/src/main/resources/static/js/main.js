@@ -26,6 +26,19 @@ const toggleMobileMenu = () => {
 
 // --------------------------------------------------------------------------
 
+// Modals
+
+const openModal = () => {
+    document.querySelector(".modal").classList.add("active");
+    document.querySelector(".modalContainer").classList.add("active");
+}
+const closeModal = () => {
+    document.querySelector(".modal").classList.remove("active");
+    document.querySelector(".modalContainer").classList.remove("active");
+}
+
+// --------------------------------------------------------------------------
+
 // Events
 
 btnMobile.addEventListener('click', toggleMobileMenu);

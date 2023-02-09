@@ -82,3 +82,79 @@ main .container .users .list .user .buttons button {
     border-radius: 5px;
 }
 /* -------------------------------------------------------------------------- */
+
+/* Form Modal */
+
+/* Floating Label Inputs */
+
+.inputField {
+    display: flex;
+}
+.inputField label {
+    pointer-events: none;
+    position: absolute;
+    color: var(--main);
+    transition: .06s;
+    font-size: 1.45rem;
+    padding: 1.48rem 0 0 1rem; 
+    user-select: none;
+}
+.inputField input {
+    font-family: 'VALORANT', sans-serif;
+    background: none;
+    outline: none;
+    border: 2px solid var(--main);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 1rem;
+}
+.inputField input {
+    font-size: 1.6rem;
+}
+.inputField input::placeholder {
+    user-select: none;
+    color: transparent;
+}
+.inputField input:focus + label,
+.inputField input:not(:placeholder-shown) + label {
+    transform: translate3d(.2rem, -1.1rem, 0) scale(.85);
+    font-weight: 600;
+    padding: 0 .5rem;
+    background-color: var(--gray2);
+    color: var(--main);
+}
+
+/*-------------------------------------------------*/
+
+/* Form */
+
+.modal .modalContainer .modalContent span {
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+.modal .modalContainer .modalContent form {
+    width: 100%;
+}
+.modal .modalContainer .modalContent form input {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+/* Options */
+
+.modal .modalContainer .options button {
+    border-radius: 5px;
+    border: 2px solid var(--main);
+    color: var(--main);
+}
+.modal .modalContainer .options button i {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+.modal .modalContainer .options button:hover {
+    background-color: var(--mainDarker);
+}
+
+
+/* -------------------------------------------------------------------------- */
