@@ -10,7 +10,7 @@ Esse projeto usa uma empresa fictícia brasileira a ser inaugurada, chamada Tech
 ## Componentes
 
 - [Daniel da Costa](https://www.github.com/DanClima)
-- [Gabriel Francelino](https://www.github.com/)
+- [Gabriel Francelino](https://github.com/gabriel-francelino)
 - [Gabriel Nadalin](https://www.github.com/)
 - [Gabriel Piva](https://www.github.com/gpiiva)
 - [Leonardo Reis](https://www.github.com/LeonardoReisC)
@@ -38,5 +38,8 @@ Esse projeto usa uma empresa fictícia brasileira a ser inaugurada, chamada Tech
 
 ## Funcionalidades
 
-- Barra de navegação responsiva para a página do Painel de Controle do Administrador
-- Conexão com o banco de dados MySQL na tabela de produtos, com leitura e inserção
+- Conexão com o banco de dados MySQL (tabelas de usuários, produtos, etc)
+- API RESTful criada com Spring Boot para disponibilizar os dados das tabelas
+- Páginas web de administrador e de usuários, ambas responsivas para diferentes dispositivos
+- Listagem dos usuários na página de usuários, com paginação de 5 em 5
+- Adição, edição e remoção de usuários através de JavaScript e da API RESTful
